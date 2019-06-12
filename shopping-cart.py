@@ -34,7 +34,7 @@ subtotal_price = 0
 selected_ids = []
 
 while True:
-    selected_id = input("Please input a product identifier:")
+    selected_id = input("Please input a product identifier (1-20) and indicate 'DONE' when complete:")
     if selected_id == "DONE":
         break
     else:
@@ -76,7 +76,7 @@ for selected_id in selected_ids:
 #The amount of tax owed (e.g. $0.39), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
     #The total amount owed, formatted as US dollars and cents (e.g. $4.89), calculated by adding together the amount of tax owed plus the total cost of all shopping cart items
     #A friendly message thanking the customer and/or encouraging the customer to shop again
-
+    #The total cost of all shopping cart items, formatted as US dollars and cents (e.g. $4.50), calculated as the sum of their prices
 
 tax = subtotal_price * TAX_RATE
 
@@ -112,10 +112,4 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~")
    # price_usd = to_usd(item['price'])
     #print(f"{item['name']} ... {price_usd}")
 
-#The total cost of all shopping cart items, formatted as US dollars and cents (e.g. $4.50), calculated as the sum of their prices
 
-
-
-
-
-# TODO: write some Python code here to produce the desired output
