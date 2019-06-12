@@ -40,6 +40,14 @@ while True:
     else:
         selected_ids.append(selected_id)
 
+#validate input
+
+    options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "DONE"]
+
+    if selected_id not in options:
+        print("INVALID SELECTION. PLEASE SELECT A VALID PRODUCT IDENTIFIER")
+        exit()
+
 #Info display
     #A grocery store name of your choice
     #A grocery store phone number and/or website URL and/or address of choice
