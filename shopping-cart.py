@@ -1,9 +1,6 @@
 #shopping_cart.py
 
 from pprint import pprint
-
-
-
     
 
 #A grocery store name of your choice
@@ -11,8 +8,8 @@ from pprint import pprint
 #The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2019-06-06 11:31 AM)
 #The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $1.50)
 
-def to_usd(my_price):
-    return "${0:,.2f}".format(my_price)
+#def to_usd(my_price):
+   # return "${0:,.2f}".format(my_price)
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -40,34 +37,40 @@ products = [
 #Info capture
 
 selected_id = input("Please input a product identifier:")
-print(selected_id)
-print(type(selected_id))
+matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+matching_product = matching_products[0]
+print(matching_product)
+print(type(matching_product))
 
 
 #info display
 
-print(products)
-pprint(products)
+#print(products)
+#pprint(products)
 
-products_count = len(products)
+#products_count = len(products)
 
 #"one string" + "another string"
 #print("There are 20 products:")
 
 
-print("-------------")
-print(f"There are {products_count} products:")
-print("-------------")
+#print("-------------")
+#print(f"There are {products_count} products:")
+#print("-------------")
 
 
-for item in products:
+#for item in products:
     #print (item["name"])
     #print(f"{item['name']}...{item['price']}")
     
-    price_usd = to_usd(item['price'])
-    print(f"{item['name']} ... {price_usd}")
+   # price_usd = to_usd(item['price'])
+    #print(f"{item['name']} ... {price_usd}")
 
 #The total cost of all shopping cart items, formatted as US dollars and cents (e.g. $4.50), calculated as the sum of their prices
+
+print("selected product:" + matching_product["name"] + " " + str(matching_product["price"]))
+
+
 #The amount of tax owed (e.g. $0.39), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
 #The total amount owed, formatted as US dollars and cents (e.g. $4.89), calculated by adding together the amount of tax owed plus the total cost of all shopping cart items
 #A friendly message thanking the customer and/or encouraging the customer to shop again
