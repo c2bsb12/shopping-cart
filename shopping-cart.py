@@ -30,7 +30,7 @@ products = [
 #Info capture
 
 checkout_start_at = dt.datetime.now() 
-total_price = 0
+subtotal_price = 0
 selected_ids = []
 
 while True:
@@ -70,7 +70,7 @@ print("SELECTED PRODUCTS:")
 for selected_id in selected_ids:
         matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
         matching_product = matching_products[0]
-        total_price = total_price + matching_product["price"]
+        subtotal_price = subtotal_price + matching_product["price"]
         print(" *** " + matching_product["name"] + " (" + to_usd(matching_product["price"]) + ")")
 
 #The amount of tax owed (e.g. $0.39), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
@@ -78,13 +78,13 @@ for selected_id in selected_ids:
     #A friendly message thanking the customer and/or encouraging the customer to shop again
 
 
-tax = total_price * TAX_RATE
+tax = subtotal_price * TAX_RATE
 
-total_price = total_price + tax  
+total_price = subtotal_price + tax  
 
 print("TOTAL PRICE: " + str((to_usd(total_price))))
 print("~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("SUBTOTAL: " + to_usd(total_price))
+print("SUBTOTAL: " + to_usd(subtotal_price))
 print("TAX: " + to_usd(tax))
 print("TOTAL: " + to_usd(total_price))
 print("~~~~~~~~~~~~~~~~~~~~~~~~~")
