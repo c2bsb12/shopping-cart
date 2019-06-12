@@ -36,11 +36,15 @@ products = [
 
 #Info capture
 
-selected_id = input("Please input a product identifier:")
-matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-matching_product = matching_products[0]
-print(matching_product)
-print(type(matching_product))
+while True:
+    selected_id = input("Please input a product identifier:")
+    if selected_id == "DONE":
+        break
+    else:
+        matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+        matching_product = matching_products[0]
+        print("selected product:" + matching_product["name"] + " " + str(matching_product["price"]))
+
 
 
 #info display
@@ -68,7 +72,6 @@ print(type(matching_product))
 
 #The total cost of all shopping cart items, formatted as US dollars and cents (e.g. $4.50), calculated as the sum of their prices
 
-print("selected product:" + matching_product["name"] + " " + str(matching_product["price"]))
 
 
 #The amount of tax owed (e.g. $0.39), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
