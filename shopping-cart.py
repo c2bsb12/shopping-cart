@@ -78,6 +78,7 @@ for selected_id in selected_ids:
     #A friendly message thanking the customer and/or encouraging the customer to shop again
     #The total cost of all shopping cart items, formatted as US dollars and cents (e.g. $4.50), calculated as the sum of their prices
 
+
 tax = subtotal_price * TAX_RATE
 
 total_price = subtotal_price + tax  
@@ -113,3 +114,4 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~")
     #print(f"{item['name']} ... {price_usd}")
 
 
+# TODO: write some Python code here to produce the desired output
